@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SEMO CSTL Support Tickets Web View</title>
+		<meta charset="utf-8">
+		<meta name="description" content="The site is designed to help view ticket data reports(including tables and charts)
+		about CSTL supports to faculty at Southeast Missouri State University.">
+		
+		<!--Icon for Title-->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<!--Style-->
+		<link rel="stylesheet" href="css/styles.css">
+		
+		<!--Font-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+		
+		<!--Star-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<!--		Header			-->
+		<header>
+			<div id="semo-background"></div>
+			<div id="overlay"></div>
+			<section id="header-content">
+				<img src="images/semo_logo.png" alt="Southeast Missouri State University white logo">
+				<h1>CENTER FOR TEACHING AND LEARNING</h1>
+			</section>
+			
+			<!--		About section		-->
+			<section id="about">
+				<div id="about-content">
+					<h2 class="red-font">CTL</h2> 
+					<h2>Monthly Tickets Data Report Web View</h2>
+					<p>This website is designed to give you a view to CSTL monthly data report with tables and charts.
+					I hope you are going to have a great experience with it.</p>
+					<nav>
+						<ul>
+							<li>
+								<a id="nav-button" href="">START WITH SINGLE VIEW</a>
+							</li>
+							<li>
+								<a id="nav-link" href="">or Go to Multiple Views ></a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				
+				
+				<div id="about-moreinfo">
+					<div>
+						<img src="images/whd_logo.png" alt="Web Help Desk logo">
+						<p>
+							Data source: Web Help Desk
+						</p>
+					</div>
+					
+					<div>
+						<img src="images/canvas_logo.png" alt="Canvas Learning Management System logo">
+						<p>
+							CTL's main support: Canvas
+						</p>
+					</div>
+					
+				</div>
+			</section>
+			
+		</header>
+		<!--		Main			-->
+		<main>
+			<!--		Report customization form		-->
+			<form id = "reportCustomization" method="GET" action="">
+			
+				<div id="left-container">
+					<p>REPORT TYPES</p>
+	
+					<label>
+						<input type="radio" name="reportType" value="Break Down by Contact Type">
+						<p>Break Down by Contact Type</p>
+						<span></span>
+					</label>
+					
+					<label>
+						<input type="radio" name="reportType" value="Break Down by Request Type">
+						<p>Break Down by Request Type</p>
+						<span></span>
+					</label>
+					
+					<label>
+						<input type="radio" name="reportType" value="Break Down by Canvas Type">
+						<p>Break Down by Canvas Type</p>
+						<span></span>
+					</label>
+					
+		
+					<label>
+						<input type="radio" name="reportType" value="Top 10 Faculty who consult with Kris Baranovic">
+						<p>Top 10 Faculty who consult with Kris Baranovic</p>
+						<span></span>
+					</label>
+					
+					<label>
+						<input type="radio" name="reportType" value="Top 10 Faculty who consult with Mary Harriet">
+						<p>Top 10 Faculty who consult with Mary Harriet</p>
+						<span></span>
+					</label>
+					
+					
+					<label>
+						<input type="radio" name="reportType" value="Five Most Frequent Issues Handled by Student Workers">
+						<p>Five Most Frequent Issues Handled by Student Workers</p>
+						<span></span>
+					</label>
+					
+					<label>
+						<input type="radio" name="reportType" value="Five Most Frequent Issues Handled by Graduate Assistants">
+						<p>Five Most Frequent Issues Handled by Graduate Assistants</p>
+						<span></span>
+					</label>
+					
+					<label>
+						<input type="radio" name="reportType" value="Support Ticket Assigned Tech">
+						<p>Support Ticket Assigned Tech</p>
+						<span></span>
+					</label>
+				</div>
+				
+				<div id="right-container">
+					<div id="input-area">
+						<div class="time-select-container">
+							<select class = "time-select">
+								<option value="">From start of</option>
+								<option value="">From start of Jan, 2021</option>
+								<option value="">From start of Feb, 2021</option>
+								<option value="">From start of Mar, 2021</option>
+							</select>
+							<span class="fa fa-star"></span>
+						</div>
+						
+						<div class="time-select-container">
+							<select class = "time-select">
+								<option value="">To start of</option>
+								<option value="">To start of Jan, 2021</option>
+								<option value="">To start of Feb, 2021</option>
+								<option value="">To start of Mar, 2021</option>
+							</select>
+							<span class="fa fa-star"></span>
+						</div>
+						
+						<select id = "chart-or-table-select">
+							<option value="">I would like to be able to view...--</option>
+							<option value="chart">I would like to view the chart.</option>
+							<option value="table">I would like to view the table.</option>
+							<option value="chart+table">I would like to view the chart<br>and the table side-by-side.</option>
+						</select>
+					</div>
+					<button type="submit">GENERATE</button>
+				</div>
+			</form>	
+			
+		</main>
+		<footer>
+		</footer>
+	</body>
+</html>

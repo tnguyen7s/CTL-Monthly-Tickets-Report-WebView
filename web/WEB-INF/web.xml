@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <display-name>CSTL's monthly ticket data report web view</display-name>
+    
+    <context-param>
+        <param-name>DbConnectionString</param-name>
+        <param-value>jdbc:sqlserver://localhost:57372;instanceName=SQLEXPRESS;databaseName=cstl;integratedSecurity=true</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>com.cstl.listener.AppContextListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>ReportDataServlet</servlet-name>
+        <servlet-class>com.cstl.servlet.ReportDataServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ReportDataServlet</servlet-name>
+        <url-pattern>/report</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.cstl.servlet.HomeServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

@@ -1,0 +1,338 @@
+/*
+almost black: #333333
+almost red: #C8102E
+orange: #ED6332
+less orange: #F79541
+purple: #9370db;
+gray: #EAE4FF
+more gray: #B5B1C5;
+*/
+html{
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+/*****General*****/
+body{
+	width: 100%;
+	font-family: Roboto, Arial, Helvetica;
+	font-size: 1.1em;
+	color: #333333;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*****Header*****/
+header{
+	position: relative; /*relative to its current position*/
+	height: 800px;
+}
+#semo-background{
+	background-image: url("/cstlmonthlyticketreportview/images/semo_image.jpg"); 
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: cover;
+	
+	width: 100%; /*relative to the containning element the header*/
+	
+	position: absolute; /*relative to the containning element: header*/
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 98px;/*first layer*/
+}
+
+#overlay{
+	background-color: rgba(0,0,0,.1);
+	
+	width: 100%; /*relative to the containning element: header*/
+	
+	position: absolute; /*relative to the containning element: header*/
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 99px;/*second layer*/
+
+}
+
+#header-content{
+	position: absolute; /*relative to the containning element: header*/
+	z-index: 100px; /*third layer of the stack*/
+}
+
+
+#header-content img{
+	width: 32%; /*relative to header-content=header*/
+	max-width: 1713px; /*max width of the image (avoid distorting the image)*/
+	padding: 1% 0px 0px 5%;
+}
+
+#header-content h1{
+	font-family:  'Belleza', sans-serif;
+	font-weight: 1000;
+	color: #C8102E;
+	font-size: 3.2em; /*relative to parent font: 16px*/
+	
+	text-align: center;
+	
+	text-decoration-line: underline;
+	text-decoration-color: white;
+	text-decoration-thickness: 7px;
+	text-shadow: 3px 1px 1px red;
+	margin-top: 24px;
+}
+
+
+
+/*****Header-About section-Main content*****/
+#about{
+	display: flex;
+	margin: auto 10%;
+	padding: 27px 3%;
+	background-color: #EAE4FF;
+	margin-bottom: 71px;
+	position: absolute;
+	top: 363px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+#about-content{
+	padding-right: 5%;
+	border-right: dashed 4px #ED6332;
+}
+
+#about p{
+	padding-top: 15px;
+	padding-bottom: 30px;
+	line-height: 30px;
+}
+
+#about h2{
+	display: inline;
+	font-size: 1.7em;
+}
+
+#about .red-font{
+	color: #C8102E;
+	font-weight: 800;
+	font-size: 2.7em;
+}
+
+#about ul{
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+}
+
+#about a{
+	display: block; /*to allow padding*/ 
+	text-decoration: none;
+	transition: all 0.5s ease-in;
+}
+
+#nav-button{ /*basically this is a link*/
+
+	padding: 15px;
+	background-color: #ED6332;
+	
+	border: solid #ED6332;
+	border-radius: 15px;
+	
+	color: white;
+	font-weight: 750;
+}
+
+#nav-button:hover{
+	opacity: 0.8;
+}
+
+#nav-link{
+	padding: 10px; 
+	color: #ED6332;
+	font-weight: 750;
+}
+
+#nav-link:hover{
+	text-decoration: underline;
+	color: #9370db;
+}
+
+
+/*****Header-About more info*****/
+#about-moreinfo{
+	margin-left: 5%;
+	margin-top: 35px;
+}
+
+#about-moreinfo div{
+	display: flex;
+	align-items: center; /*align images with text by applying flex-display and align items as center relative to the flex container*/
+	padding-bottom: 30px;
+}
+
+#about-moreinfo img{
+	width: 20%;
+}
+
+#about-moreinfo p{
+	font-size: 1.2em;
+	margin-left: 10px;
+}
+
+
+/*****Main-form: report type: first flex*****/
+#reportCustomization{
+	display: flex;
+	margin: 50px 3% 200px 3%;
+}
+
+#left-container{
+	display: flex;
+	flex-direction: column;
+	
+	margin-right: 5%;
+}
+
+#left-container label{
+	font-size: 0.9em;
+	cursor: pointer;
+	position: relative;
+	padding-left: 15px;
+	margin-bottom: 20px;
+}
+
+#left-container span{
+	position: absolute; /*relative to the the container which is the label*/
+	top: 0px;
+	left: 0px;
+	
+	width: 17px;
+	height: 15px;
+	
+	border: solid 2px #ED6332;
+	border-radius: 15px;
+}
+
+#left-container input{
+	opacity: 0; /*hidden*/ 
+}
+
+#left-container label p{
+	display: inline;
+}
+
+/*when the radio is checked*/
+#left-container input:checked ~ span{ /*general silbling css selector*/
+	background-color: #ED6332;
+}
+
+#left-container input:checked ~ p{
+	color: #F79541;
+}
+
+/*when the label is hovered*/
+#left-container label:hover span{
+	background-color: #B5B1C5;
+	border-color: #B5B1C5;
+}
+
+#left-container label:hover p{
+	color: #B5B1C5;
+	text-decoration: underline 1px #C4BFD6;
+}
+
+#left-container > p{
+	font-size: 1.5em;
+	font-weight: 600;
+	text-align: center;
+	font-family:"roboto condensed";
+	
+	padding-bottom: 2px;
+	border-bottom: solid 5px #ED6332;
+	margin-bottom: 30px;
+}
+
+ /*****drop-down menus and button: second flex*****/
+
+.time-select-container{
+	display: inline;
+}
+
+.fa {
+	position: relative;
+	right: 24px;
+	font-size: 20px;
+	color: white;
+}
+
+.time-select{
+	padding: 7px;
+	
+	font-size: 16px;
+	border: none;
+	background-color: #C8102E;
+	color: white;
+}
+
+
+
+#chart-or-table-select{
+	padding: 5px;
+	font-size: 16px;
+	border-color: #EFEFEF;
+	background-color: #EFEFEF;
+}
+
+#input-area{
+	padding: 15px;
+	border-style: solid dashed dashed solid; 
+	/* border-style: solid dashed solid dashed; */
+	border-width: 3px;
+	border-radius: 10px;
+}
+
+/*****Main-form: button*****/
+#right-container{
+	position: relative;
+}
+
+#right-container button{
+	cursor: pointer;
+	
+	position: absolute;
+	right: 0px;
+	margin-top: 70px; 
+	
+	padding: 15px;
+	background-color: #A14668;
+	
+	font-family: "roboto condensed", Roboto, Arial, Helvetica;
+	font-size: 1.1em;
+	font-weight: 650;
+	color: white;
+	
+	border-color: #A14668;
+	border-radius: 10px;
+	
+	transition: all 0.3s ease-in;
+}
+
+#right-container button:hover{
+	opacity: 0.8;
+}
+
+
+
+
+
+
+
